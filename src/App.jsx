@@ -5,10 +5,11 @@ function App() {
   const [disabled, setDisabled] = useState(false)
   const [buttonColor, setButtonColor] = useState('red')
   const nextColor = buttonColor === 'red' ? 'blue' : 'red'
+  const buttonClass = disabled ? 'gray' : buttonColor
 
   return (
     <div>
-      <button disabled={disabled} className={buttonColor} onClick={() => setButtonColor(nextColor)}>
+      <button disabled={disabled} className={buttonClass} onClick={() => setButtonColor(nextColor)}>
         Change to {nextColor}
       </button>
       <br />

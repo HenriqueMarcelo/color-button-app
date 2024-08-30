@@ -6,6 +6,11 @@
     background-color: blue;
 }
 
+.gray {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
 button {
     border: 4px solid black!important;
     border-radius: 0!important;
@@ -19,3 +24,8 @@ button {
 button:hover {
     box-shadow: 2px 2px 0 black!important;
 }
+
+/* button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+} */
