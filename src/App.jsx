@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <button disabled={disabled} className={buttonColor} onClick={() => setButtonColor(nextColor)}>
-        {nextColor}
+        Change to {nextColor}
       </button>
       <br />
       <input
