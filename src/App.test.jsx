@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import App from './App'
 import { expect } from 'vitest'
+import { kebabCaseToTitleCase } from './helpers'
 
 test('button click flow', () => {
   // render button
@@ -70,4 +71,16 @@ test('if button change color when is disabled and unabled', () => {
 
   fireEvent.click(checkboxElement)
   expect(buttonElement).toHaveClass('blue')
+})
+
+describe('kebabCaseToTitleCase', () => {
+  test('works for no hyphens', () => {
+    expect(kebabCaseToTitleCase('red')).toBe('Red')
+  })
+  test('works for one hyphen', () => {
+    expect(kebabCaseToTitleCase('midnight-blue')).toBe('Midnight Blue')
+  })
+  test('works for multiple hyphens', () => {
+    expect(kebabCaseToTitleCase('medium-violet-red')).toBe('Medium Violet Red')
+  })
 })
